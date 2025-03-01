@@ -48,40 +48,48 @@ h2 {
     object-fit: cover;
 }
 
-.links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-}
-
-.links a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: #333;
-    border-radius: 5px;
-    transition: background 0.3s, transform 0.2s;
-}
-
-.links a:hover {
-    background-color: #4CAF50;
-    transform: scale(1.1);
-}
-
-.links a:focus {
-    outline: 2px solid #4CAF50;
-}
-
-/* Footer */
+/* Footer Styles */
 footer {
     background-color: #222;
     padding: 24px;
     font-size: 14px;
     text-align: center;
+    color: #fff;
 }
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 42px; /* Space between the links */
+    margin-top: 10px;
+}
+
+.links a {
+    font-size: 18px;
+    color: #fff; /* White text color */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Gap between the icon and text */
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.links a:hover {
+    color: #4CAF50; /* Green color on hover */
+    transform: scale(1.05); /* Slightly enlarge the text and icon */
+}
+
+.links a:focus {
+    outline: 2px solid #4CAF50; /* Green outline when focused */
+}
+
+/* FontAwesome icon styles */
+.links i {
+    font-size: 22px; /* Icon size */
+    transition: color 0.3s ease;
+}
+
+
 /* Modal Styles */
 .modal {
     display: none;
