@@ -1,14 +1,14 @@
 /* Define CSS variables for colors */
 :root {
-    --primary-color: #66BB6A; /* Softer, lighter green for a fresher feel */
-    --secondary-color: #333333; /* Dark grey for header */
-    --tertiary-color: #262626; /* Slightly darker grey for footer */
-    --background-color: #1C1C1C; /* Very dark grey for body */
-    --text-color-light: #D0D0D0; /* Lighter grey for text */
-    --text-color-dark: #FFFFFF; /* White for text */
-    --hover-color: #81C784; /* Lighter, pastel green for hover effects */
-    --icon-color: #D0D0D0; /* Light grey for icons */
-    --focus-outline-color: #81C784; /* Lighter green for focus outline */
+    --primary-color: #66BB6A;
+    --secondary-color: #333333;
+    --tertiary-color: #262626;
+    --background-color: #1C1C1C;
+    --text-color-light: #D0D0D0;
+    --text-color-dark: #FFFFFF;
+    --hover-color: #81C784;
+    --icon-color: #D0D0D0;
+    --focus-outline-color: #81C784;
 }
 
 /* General Styles */
@@ -19,8 +19,16 @@ body {
     background-color: var(--background-color);
     color: var(--text-color-light);
     text-align: center;
-    line-height: 1.6; 
+    line-height: 1.6;
     max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Main content area (ensures content doesn't overflow the footer) */
+main {
+    flex: 1;
 }
 
 /* Header Styles */
@@ -38,7 +46,7 @@ h1 {
     font-family: 'Cinzel Decorative', serif;
     font-size: 36px;
     margin: 0;
-    color: var(--primary-color); /* Using the primary color */
+    color: var(--primary-color);
 }
 
 h2 {
@@ -71,12 +79,15 @@ footer {
     font-size: 14px;
     text-align: center;
     color: var(--text-color-dark);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .links {
     display: flex;
     justify-content: center;
-    gap: 42px; /* Space between the links */
+    gap: 42px;
+    flex-wrap: wrap;
     margin-top: 10px;
 }
 
@@ -86,17 +97,17 @@ footer {
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 8px; /* Gap between the icon and text */
+    gap: 8px;
     transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .links a:hover {
     color: var(--hover-color);
-    transform: scale(1.05); /* Slightly enlarge the text and icon */
+    transform: scale(1.05);
 }
 
 .links a:focus {
-    outline: 2px solid var(--focus-outline-color); /* Green outline when focused */
+    outline: 2px solid var(--focus-outline-color);
 }
 
 /* FontAwesome icon styles */
@@ -125,7 +136,7 @@ footer {
     max-width: 90%;
     max-height: 90%;
     margin: auto;
-    display: block; /* Ensure image is treated as block element */
+    display: block;
 }
 
 /* Close button */
@@ -148,4 +159,22 @@ footer {
 
 .poster img {
     cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+    .links {
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    .links a {
+        font-size: 16px;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    footer {
+        font-size: 12px;
+    }
 }
