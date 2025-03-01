@@ -1,10 +1,23 @@
+/* Define CSS variables for colors */
+:root {
+    --primary-color: #66BB6A; /* Softer, lighter green for a fresher feel */
+    --secondary-color: #333333; /* Dark grey for header */
+    --tertiary-color: #262626; /* Slightly darker grey for footer */
+    --background-color: #1C1C1C; /* Very dark grey for body */
+    --text-color-light: #D0D0D0; /* Lighter grey for text */
+    --text-color-dark: #FFFFFF; /* White for text */
+    --hover-color: #81C784; /* Lighter, pastel green for hover effects */
+    --icon-color: #D0D0D0; /* Light grey for icons */
+    --focus-outline-color: #81C784; /* Lighter green for focus outline */
+}
+
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #111;
-    color: white;
+    background-color: var(--background-color);
+    color: var(--text-color-light);
     text-align: center;
     line-height: 1.6; 
     max-width: 100%;
@@ -12,8 +25,9 @@ body {
 
 /* Header Styles */
 header {
-    background-color: #222;
+    background-color: var(--secondary-color);
     padding: 10px;
+    color: var(--text-color-dark);
 }
 
 h1, h2 {
@@ -24,11 +38,13 @@ h1 {
     font-family: 'Cinzel Decorative', serif;
     font-size: 36px;
     margin: 0;
+    color: var(--primary-color); /* Using the primary color */
 }
 
 h2 {
     font-size: 24px;
     margin-top: 10px;
+    color: var(--text-color-dark);
 }
 
 /* Poster Section */
@@ -50,11 +66,11 @@ h2 {
 
 /* Footer Styles */
 footer {
-    background-color: #222;
+    background-color: var(--tertiary-color);
     padding: 24px;
     font-size: 14px;
     text-align: center;
-    color: #fff;
+    color: var(--text-color-dark);
 }
 
 .links {
@@ -66,7 +82,7 @@ footer {
 
 .links a {
     font-size: 18px;
-    color: #fff; /* White text color */
+    color: var(--icon-color);
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -75,20 +91,19 @@ footer {
 }
 
 .links a:hover {
-    color: #4CAF50; /* Green color on hover */
+    color: var(--hover-color);
     transform: scale(1.05); /* Slightly enlarge the text and icon */
 }
 
 .links a:focus {
-    outline: 2px solid #4CAF50; /* Green outline when focused */
+    outline: 2px solid var(--focus-outline-color); /* Green outline when focused */
 }
 
 /* FontAwesome icon styles */
 .links i {
-    font-size: 22px; /* Icon size */
+    font-size: 22px;
     transition: color 0.3s ease;
 }
-
 
 /* Modal Styles */
 .modal {
@@ -118,7 +133,7 @@ footer {
     position: absolute;
     top: 15px;
     right: 35px;
-    color: white;
+    color: var(--text-color-dark);
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
