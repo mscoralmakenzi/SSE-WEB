@@ -43,7 +43,9 @@ function moveSlide(n) {
     const visibleSlides = getVisibleSlides();
     const maxIndex = slides.length - visibleSlides;
 
-    slideIndex = Math.max(0, Math.min(slideIndex + n, maxIndex));
+    slideIndex = (slideIndex + n) % (maxIndex + 1); // Loop back to 0 when reaching the end
+    if (slideIndex < 0) slideIndex = maxIndex; // Handle negative slideIndex case
+
     container.style.transform = `translateX(-${slideIndex * (100 / visibleSlides)}%)`;
 }
 
