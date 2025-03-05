@@ -1,14 +1,14 @@
 /* Define CSS variables for colors */
 :root {
     --primary-color: #66BB6A;
-    --secondary-color: #333333;
-    --tertiary-color: #262626;
-    --background-color: #1C1C1C;
-    --text-color-light: #D0D0D0;
-    --text-color-dark: #FFFFFF;
-    --hover-color: #81C784;
-    --icon-color: #D0D0D0;
-    --focus-outline-color: #81C784;
+    --primary-hover: #81C784;
+    --text-light: #D0D0D0;
+    --text-dark: #FFFFFF;
+    --background: #1C1C1C;
+    --header-footer-bg: #262626;
+    --content-bg: #333333;
+    --focus-outline: var(--primary-hover);
+    --icon-color: var(--text-light);
 }
 
 /* General Styles */
@@ -16,8 +16,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--background-color);
-    color: var(--text-color-light);
+    background-color: var(--background);
+    color: var(--text-light);
     text-align: center;
     line-height: 1.6;
     max-width: 100%;
@@ -26,16 +26,20 @@ body {
     min-height: 100vh;
 }
 
-/* Main content area (ensures content doesn't overflow the footer) */
+/* Main content area */
 main {
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8px;
 }
 
 /* Header Styles */
 header {
-    background-color: var(--secondary-color);
+    background-color: var(--content-bg);
     padding: 8px;
-    color: var(--text-color-dark);
+    color: var(--text-dark);
 }
 
 h1, h2 {
@@ -52,7 +56,7 @@ h1 {
 h2 {
     font-size: 24px;
     margin-top: 10px;
-    color: var(--text-color-dark);
+    color: var(--text-dark);
 }
 
 /* Poster Section */
@@ -75,15 +79,20 @@ h2 {
     border-radius: 10px;
     margin-top: 10px;
     object-fit: cover;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.poster img:hover {
+    opacity: 0.8;
 }
 
 .poster-info {
     margin-top: 0px;
-    color: var(--text-color-light);
+    color: var(--text-light);
     opacity: 0.7;
 }
 
-/* Make the link text blend in with the rest of the content */
 .poster-link {
     font-size: 14px;
     color: inherit;
@@ -96,17 +105,13 @@ h2 {
     opacity: 1;
 }
 
-.poster img:hover {
-    opacity: 0.8;
-}
-
 /* Footer Styles */
 footer {
-    background-color: var(--tertiary-color);
+    background-color: var(--header-footer-bg);
     padding: 18px;
     font-size: 14px;
     text-align: center;
-    color: var(--text-color-dark);
+    color: var(--text-dark);
     width: 100%;
     box-sizing: border-box;
 }
@@ -130,15 +135,14 @@ footer {
 }
 
 .links a:hover {
-    color: var(--hover-color);
+    color: var(--primary-hover);
     transform: scale(1.05);
 }
 
 .links a:focus {
-    outline: 2px solid var(--focus-outline-color);
+    outline: 2px solid var(--focus-outline);
 }
 
-/* FontAwesome icon styles */
 .links i {
     font-size: 22px;
     transition: color 0.3s ease;
@@ -159,34 +163,88 @@ footer {
     text-align: center;
 }
 
-/* Modal content (image) styling */
 .modal-content {
     max-width: 90%;
     max-height: 90%;
     margin: auto;
     display: block;
+    cursor: pointer;
 }
 
-/* Close button */
 .close {
     position: absolute;
     top: 15px;
     right: 35px;
-    color: var(--text-color-dark);
+    color: var(--text-dark);
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 .close:hover,
 .close:focus {
     color: #bbb;
     text-decoration: none;
+}
+
+/* Carousel Styles */
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 80%;
+    overflow: hidden;
+    margin: auto;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 400%;
+}
+
+.carousel-slide {
+    flex: 1 0 33%;
+    text-align: center;
+}
+
+.carousel-slide img {
+    width: 100%;
+    border-radius: 8px;
+    max-width: 80%;
     cursor: pointer;
 }
 
-.poster img {
+.prev, .next {
     cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(70, 69, 69, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 30px;
+    border-radius: 2px;
+    z-index: 100;
+}
+
+.prev { left: 0; }
+.next { right: 0; }
+
+/* Responsive Carousel */
+@media (max-width: 768px) {
+    .carousel-slide {
+        flex: 1 0 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-slide {
+        flex: 1 0 100%;
+    }
 }
 
 /* Mobile Styles */
