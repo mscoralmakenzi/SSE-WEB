@@ -152,7 +152,7 @@ footer {
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 200;
     left: 0;
     top: 0;
     width: 100%;
@@ -213,7 +213,7 @@ footer {
 .carousel-slide img {
     width: 100%;
     border-radius: 8px;
-    max-width: 80%;
+    max-width: 76%;
     cursor: pointer;
 }
 
