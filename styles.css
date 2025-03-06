@@ -1,12 +1,11 @@
 /* Define CSS variables for colors */
 :root {
-    --primary-color: #66BB6A;
+    --primary-color: #66bb8b;
     --primary-hover: #81C784;
     --text-light: #D0D0D0;
     --text-dark: #FFFFFF;
     --background: #1C1C1C;
     --header-footer-bg: #262626;
-    --content-bg: #333333;
     --focus-outline: var(--primary-hover);
     --icon-color: var(--text-light);
 }
@@ -37,8 +36,8 @@ main {
 
 /* Header Styles */
 header {
-    background-color: var(--content-bg);
-    padding: 8px;
+    background-color: var(--header-footer-bg);
+    padding: 4px;
     color: var(--text-dark);
 }
 
@@ -55,8 +54,20 @@ h1 {
 
 h2 {
     font-size: 24px;
-    margin-top: 10px;
+    margin-top: 6px;
     color: var(--text-dark);
+}
+
+/* Events Hosted By Text */
+footer p {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 11px;
+    color: var(--text-light);
+    text-align: center;
+    margin-top: 16px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* Poster Section */
@@ -64,7 +75,7 @@ h2 {
     display: flex;
     justify-content: center;
     gap: 20px;
-    padding: 20px;
+    padding: 10px;
     flex-wrap: wrap;
 }
 
@@ -88,7 +99,7 @@ h2 {
 }
 
 .poster-info {
-    margin-top: 0px;
+    margin-top: -2px;
     color: var(--text-light);
     opacity: 0.7;
 }
@@ -108,7 +119,7 @@ h2 {
 /* Footer Styles */
 footer {
     background-color: var(--header-footer-bg);
-    padding: 18px;
+    padding: 14px;
     font-size: 14px;
     text-align: center;
     color: var(--text-dark);
@@ -121,7 +132,7 @@ footer {
     justify-content: center;
     gap: 42px;
     flex-wrap: wrap;
-    margin-top: 10px;
+    margin-top: 2px;
 }
 
 .links a {
@@ -202,7 +213,8 @@ footer {
 .carousel-container {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: 400%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .carousel-slide {
