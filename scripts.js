@@ -37,6 +37,14 @@ window.addEventListener('resize', () => {
     moveSlide(0);    // Reposition the carousel to the start
 });
 
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') {
+        moveSlide(-1);  // Move to previous slide
+    } else if (event.key === 'ArrowRight') {
+        moveSlide(1);  // Move to next slide
+    }
+});
+
 // Call the function initially to set up the correct width
 updateCarouselContainerWidth();
 
