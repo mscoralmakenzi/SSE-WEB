@@ -257,6 +257,9 @@ footer {
     .carousel-slide {
         flex: 1 0 100%;
     }
+    .carousel {
+        max-width: 100%;
+    }
 }
 
 /* Mobile Styles */
@@ -274,5 +277,8 @@ footer {
 
     footer {
         font-size: 12px;
+    }
+    .carousel {
+        max-width: 90%;
     }
 }
